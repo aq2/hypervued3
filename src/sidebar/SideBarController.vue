@@ -2,7 +2,7 @@
 
 //- aside 
 
-SideBar(v-if='currentPage==8')
+SideBar(v-if='currentPage > 6')
 
 </template>
 

@@ -13,8 +13,8 @@
     HeaderLinks
 
   #candInfo
-    CandInfo(v-show='vizPage')
-  
+    CandInfo(v-show='vizPage')  
+    //- todo based on page number?
   
   #buttons2
     #search
@@ -115,7 +115,7 @@ methods: {
       this.goFullScreen()
     })
     EventBus.$on('changePage', (pageNo) => {
-      this.vizPage = (pageNo == 8)
+      this.vizPage = (pageNo > 6)
     })
   }
 }

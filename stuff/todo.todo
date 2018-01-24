@@ -1,12 +1,16 @@
 doing now:
 
+parallel:
+  ☐ decide on selection technique
+    ☐ all of them?
+    ☐ show a front - need paretocalcs
+
+
+pareto:  
   ☐ databar mean for each
-
   ☐ candinfo bar hover - show dim and value
-
-  ☐ rank.score - decimals
-  ☐ embed pareto calcs somehow - import?
-  
+  ☐ rank.score - decimals = use d3 number methods
+  ✔ embed pareto calcs somehow - import? @done(24-01 16:56)
   ☐ dimension hover
   ☐ search for cand - highlight/grow
 

@@ -55,7 +55,8 @@ methods: {
     this.$store.dispatch('setCandMeta', candMeta)
 
     // send event to header to change page
-    EventBus.$emit('changePage', 8)    // qq
+    // EventBus.$emit('changePage', 8)    // qq
+    EventBus.$emit('calcsDone')    // qq
   },
 
   contest(allRankings, cands) {

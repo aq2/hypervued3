@@ -61,11 +61,12 @@ created() {
         this.$('vizBtn').classList.add('active')
         break
       case 7:
-        // pareto calcs
+        this.pageTitle = 'Pareto Dominance Plot'
+        this.deActivateAll()
+        this.$('vizBtn').classList.add('active')
         break
       case 8:
-        // pareto viz
-        this.pageTitle = 'Pareto Dominance Plot'
+        this.pageTitle = 'Parallel Coords Plot'
         this.deActivateAll()
         this.$('vizBtn').classList.add('active')
         break
