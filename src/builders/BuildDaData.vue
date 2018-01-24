@@ -11,6 +11,7 @@
 <script>
 
 import {EventBus} from './../main'
+import * as d3 from 'd3'
 
 export default {
 
@@ -73,15 +74,30 @@ methods: {
   calcStats(scores) {
     const min = Math.min(...scores)
     const max = Math.max(...scores)
-    const mean = this.mean(scores)
+    // const mean = this.mean(scores)   
+    const mean = d3.mean(scores)
+    
 
     const sqrDiffs = scores.map(score => {
       const diff = score - mean
       return diff * diff
     })
 
-    const meanSqD = this.mean(sqrDiffs)
+    // const meanSqD = this.mean(sqrDiffs)
+    const meanSqD = d3.mean(sqrDiffs)
     const stdDev = Math.sqrt(meanSqD)
+    
+    // // something wrong in calcs?
+    // var dogs = [600, 470, 170, 430, 300]
+    // const sqrDiffs2 = dogs.map(dog => {
+    //   const diff = dog - mean
+    //   return diff * diff
+    // })
+
+    // const meanSqD2 = this.mean(sqrDiffs2)
+    // const stdDev2 = Math.sqrt(meanSqD2)
+    // const sD = d3.deviation(dogs)
+    // console.log(stdDev2, sD)
     
     const stats = {min, max, mean, stdDev}
     return stats
@@ -141,13 +157,8 @@ methods: {
         norm.push(normForDim)
       })
 
-      const meanRank = this.mean(rankings)
-      const meanNorm = this.mean(norm)
-
-      // const pareto = {front:-1, sups:[], peers:[], infs:[]}
-
-
-
+      const meanRank = d3.mean(rankings)
+      const meanNorm = d3.mean(norm)
 
       const candObj = {candKey, candID, scores, rankings, meanRank, norm, meanNorm, ignored, paretoFront:-1, sups:[], peers:[], infs:[]}
       candiData.push(candObj)
@@ -155,19 +166,19 @@ methods: {
     return candiData
   },
 
-  mean(arr) {
-    let length = 0
-    arr.forEach((a) => {
-      if (a !== false) {    // ignore false elements
-        length++
-      }
-    })
-    const total = arr.reduce((total, e) => {
-      return total + e
-    }, 0)
-    const mean = total / length
-    return mean
-  },
+  // mean(arr) {
+  //   let length = 0
+  //   arr.forEach((a) => {
+  //     if (a !== false) {    // ignore false elements
+  //       length++
+  //     }
+  //   })
+  //   const total = arr.reduce((total, e) => {
+  //     return total + e
+  //   }, 0)
+  //   const mean = total / length
+  //   return mean
+  // },
 
   nextPage(newPage) {
     EventBus.$emit('changePage', newPage)

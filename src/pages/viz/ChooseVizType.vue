@@ -14,11 +14,11 @@
   .v
 
   #links
-    button(id='pareto' @click="nextPage(7)")
+    button(id='pareto' @click='nextPage(7)')
       icon(name='bicycle' scale=4)
       p pareto dominance plot
     .h   
-    button(id='parallel')
+    button(id='parallel' @click='nextPage(9)')
       icon(name='line-chart' scale=4)
       p parallel plot
   

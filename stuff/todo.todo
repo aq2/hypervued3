@@ -19,6 +19,7 @@ sidebar:
 .
  databar/multibar:
    ☐ height and width of databar
+   ☐ overlay with transparency - share axis
     
 .    
  general:

@@ -14,6 +14,7 @@
     ChooseViz(v-if='page == 6')
     ParetoCalcs(v-if='page == 7')
     ParetoViz(v-if='page == 8')
+    ParallelViz(v-if='page == 9')
 
 
 </template>
@@ -31,6 +32,7 @@ import SaveCSVtoFB from './dataSources/csv/SaveCSVtoFB'
 import ChooseViz from './viz/ChooseVizType'
 import ParetoCalcs from './../pages/viz/pareto/ParetoCalcs'
 import ParetoViz from './../pages/viz/pareto/ParetoViz'
+import ParallelViz from '../pages/viz/parallel/ParallelViz'
 
 
 export default {
@@ -44,7 +46,8 @@ components: {
   SaveCSVtoFB,
   ChooseViz,
   ParetoCalcs,
-  ParetoViz
+  ParetoViz,
+  ParallelViz
 },  
 
 data() {

@@ -34,7 +34,7 @@ methods: {
     // keep allSups for finding fronts later
     let allSups = []
     cands.forEach((cand) => {
-      const sups = [...cand.sups]  // dereference it!
+      const sups = [...cand.sups]  // dereference it! avoid passing array by ref!
       allSups.push(sups)
     })
     let newFronts = this.buildFronts(allSups)
@@ -55,7 +55,7 @@ methods: {
     this.$store.dispatch('setCandMeta', candMeta)
 
     // send event to header to change page
-    EventBus.$emit('changePage', 8)
+    EventBus.$emit('changePage', 8)    // qq
   },
 
   contest(allRankings, cands) {
