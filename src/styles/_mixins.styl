@@ -1,0 +1,14 @@
+// global mixins
+
+link(radius=5px)
+  border-radius radius
+  transition .25s all ease
+  border 2px solid transparent
+  &:hover
+    color $gb
+    cursor pointer
+    animation throb linear 1s infinite
+    background tint($buttonColour, 10)
+
+
+

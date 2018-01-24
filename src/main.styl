@@ -1,0 +1,84 @@
+@import 'styles/_vars'
+@import 'styles/_mixins'
+@import 'styles/*'
+
+
+
+#page
+  padding 2.5rem 0 0 5rem
+
+h1
+  margin 0
+  margin-bottom 0.5rem
+  color #111
+  font-size 2rem
+  font-family Merriweather
+
+p
+  color #111
+  margin-bottom 1.5rem
+
+a
+  color $g9
+  outline none
+  link(0.5rem)
+  min-width 140px
+  background blue
+  font-size 1.2rem
+  text-align center
+  display inline-block
+  padding 0.2rem 0.2rem
+  text-decoration-line none
+
+button
+  font-size 1.25rem
+  color $g8
+  background blue
+  padding 0.75rem
+  border-radius 0.5rem
+  border 0
+  // border 2px solid lime
+  transition 0.5s all ease
+  // animation throb linear 2s infinite
+  &:hover
+    cursor pointer
+    background lightblue
+
+
+#text 
+  background $g7
+  padding 1rem
+  width 600px
+
+
+.h 
+  width 50px
+  display inline-block
+
+
+.v 
+  height 30px
+
+pre 
+  font-size 1.5rem
+
+
+//  ---  animations   ---
+//
+
+.flash
+  animation flash linear 2s infinite
+
+.throb
+  animation throb linear 2s infinite
+
+@keyframes flash
+  0% { opacity: 1 } 
+  50% { opacity: .5 } 
+  100% { opacity: 1 }
+
+@keyframes throb
+  0% { border-color: green } 
+  50% { border-color: blue } 
+  100% { border-color: green }
+
