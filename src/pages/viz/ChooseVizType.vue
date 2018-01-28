@@ -18,7 +18,7 @@
       icon(name='bicycle' scale=4)
       p pareto dominance plot
     .h   
-    button(id='parallel' @click='nextPage(9)')
+    button(id='parallel' @click='nextPage(8)')
       icon(name='line-chart' scale=4)
       p parallel plot
   

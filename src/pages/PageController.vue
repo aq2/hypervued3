@@ -14,7 +14,9 @@
     ChooseViz(v-if='page == 6')
 
     Pareto(v-if='page == 7')
-    Parallel(v-if='page == 8')
+    //- ParallelSelection(v-if='page == 8')
+    ParallelController(v-if='page == 8')
+    
 
 </template>
 
@@ -30,7 +32,8 @@ import GetMetaData from './dataSources/csv/GetMetaData'
 import SaveCSVtoFB from './dataSources/csv/SaveCSVtoFB'
 import ChooseViz from './viz/ChooseVizType'
 
-import Parallel from '../pages/viz/parallel/Parallel'
+import ParallelController from '../pages/viz/parallel/ParallelController'
+import ParallelSelection from '../pages/viz/parallel/ParallelSelection'
 import Pareto from '../pages/viz/pareto/Pareto'
 
 
@@ -44,7 +47,8 @@ components: {
   GetMetaData,
   SaveCSVtoFB,
   ChooseViz,
-  Parallel,
+  ParallelSelection,
+  ParallelController,
   Pareto
 },  
 

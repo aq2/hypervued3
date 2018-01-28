@@ -97,6 +97,7 @@ methods: {
     }
 
     let nodeEl = this.$(c)
+    // magic numbers = arbitrary 'nice' colour
     nodeEl.style.background = 'hsla(214, 60%, ' + (100-normScore) + '%, 0.9'
     nodeEl.style.opacity = 1
 
