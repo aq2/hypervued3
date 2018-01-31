@@ -3,6 +3,7 @@
 #main
   TheHeader
   #article
+    //- todo replace with dynamic components!
     Welcome(v-if='page == 0')
       
     DataSource(v-if='page == 1')

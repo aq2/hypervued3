@@ -7,6 +7,10 @@
 #page
   padding 2.5rem 0 0 5rem
 
+#article
+  // background black
+
+
 h1
   margin 0
   margin-bottom 0.5rem
@@ -62,6 +66,43 @@ button
 pre 
   font-size 1.5rem
 
+
+
+.cap
+  color white
+  font-size 2rem
+  background $g5
+  min-width 400px
+  margin-bottom 1rem
+  padding 1rem
+
+.cap:nth-of-type(odd)
+  background $g6
+
+.init
+  font-size 1rem
+
+.check
+  // position static
+
+.checkmark
+  // position relative
+  // margin-left 1rem
+
+.plainlabel
+  position relative
+  margin 0
+  min-width 200px
+  // margin-left 1rem
+
+.lay
+  margin-left 2rem
+
+.plainlabel:hover input ~ .checkmark
+  background-color #47c
+  opacity 0.5
+  transition 0.25s all
+  cursor pointer
 
 //  ---  animations   ---
 //

@@ -1,8 +1,10 @@
 <template lang="pug">
   
-#pareto
+#man
+  p pick a front
   ParetoCalcs
-  ParetoViz(v-if='calcsDone')
+  ShowFronts(v-if='calcsDone')
+
 
 </template>
 
@@ -10,15 +12,14 @@
 <script>
 
 import {EventBus} from '../../../main'
-import ParetoCalcs from '../pareto/ParetoCalcs'
-import ParetoViz from '../pareto/ParetoViz'
-
+import ParetoCalcs from './../pareto/ParetoCalcs'
+import ShowFronts from './ShowFronts'
 
 export default {
-
+  
 components: {
   ParetoCalcs,
-  ParetoViz
+  ShowFronts
 },
 
 data() {

@@ -67,7 +67,7 @@ methods: {
       if (n) {
         let topID = 'top' + letter + x
         let top = this.$(topID)
-        console.log('top', topID)
+        // console.log('top', topID)
       
         top.style.height = 80 * n + 'px'
         x++
