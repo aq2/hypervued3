@@ -36,8 +36,8 @@ methods: {
 
     // Create elements in container
     var slider = sliderBox.append("div").attr("class", "slider")
-    var handleW = slider.append("div").attr("class", "handle WW")
-    var handleE = slider.append("div").attr("class", "handle EE")
+    var handleW = slider.append("div").attr("class", "handle WW").attr('id', 'WW')
+    var handleE = slider.append("div").attr("class", "handle EE").attr('id', 'EE')
 
     // Update the `left` and `width` attributes of `slider` based on `sliderRange`
     function updateUIFromRange () {
@@ -117,7 +117,8 @@ methods: {
 
             slider.style("left", newLeft + "px")
             slider.style("width", newWidth + "px")
-
+            // d3.select('#WW').text('')        
+            // d3.select('#WW').text(newLeft)
             updateRangeFromUI()
         })
 
@@ -244,7 +245,9 @@ main() {
   var slider = this.createD3RangeSlider(0, 100, "#slider-container")
   
   slider.onChange((newRange) => {
-        d3.select("#range-label").text(newRange.begin + " - " + newRange.end)
+    d3.select("#range-label").text(newRange.begin + " - " + newRange.end)
+    d3.select('#WW').text(newRange.begin)
+    d3.select('#EE').text(newRange.end)    
   })
 
   slider.range(0,10) 
@@ -288,10 +291,11 @@ mounted() {
 
 .slider .handle {
     position: absolute
-    height: 30px
+    height: 32px
+    top: -2px
     width: 30px
     border: 2px solid blue
-    background: #f21
+    background: lightblue
     
 }
 
@@ -311,5 +315,7 @@ mounted() {
     // margin-top: -4px
 }
 
+#WW, #EE
+  text-align center
 
 </style>
