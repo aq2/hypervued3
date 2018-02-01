@@ -9,10 +9,10 @@
 
 import {EventBus} from '../../../main'
 
-import ManParallel from '../parallel/ManParallel'
-import AllParallel from '../parallel/AllParallel'
-import FracParallel from '../parallel/FracParallel'
-import ParetoParallel from '../parallel/ParetoParallel'
+import ManParallel from '../parallel/select/ManParallel'
+import AllParallel from '../parallel/select/AllParallel'
+import FracParallel from '../parallel/select/FracParallel'
+import ParetoParallel from '../parallel/select/ParetoParallel'
 import ParallelSelection from '../parallel/ParallelSelection.vue'
 
 export default {

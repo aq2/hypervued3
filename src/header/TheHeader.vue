@@ -12,8 +12,8 @@
   #headerLinks
     HeaderLinks
 
-  #candInfo
-    CandInfo(v-show='vizPage')  
+  #candInfo(v-if='vizPage')
+    CandInfo  
     //- todo based on page number?
   
   #buttons2

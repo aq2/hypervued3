@@ -8,7 +8,7 @@
 
   #text
     p <b>Select candidates to include in the plot.</b>
-    p The plot can get cluttered, so you may not want to view them all.
+    p The plot can get cluttered, so you may not want to view all candidates.
     p Here you can specify a subset.
   .v
 

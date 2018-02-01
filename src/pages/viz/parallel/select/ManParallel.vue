@@ -2,23 +2,19 @@
   
 #page
   h1 Manual Candidate Selection
-  Initialize
-  
+  InitializeCands
 
 
 </template>
 
+
 <script>
 
-// need to get candiData from store
-// sort candIDs alpha
-// put initial caps into a set
-
-import Initialize from './Initialize'
+import InitializeCands from './InitializeCands'
 
 export default {
   components: {
-    Initialize
+    InitializeCands
   },
   computed: {
     candiData() {

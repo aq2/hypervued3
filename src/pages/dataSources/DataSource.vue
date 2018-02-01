@@ -42,10 +42,9 @@ methods: {
   }
 
 }
+
 }
-
 </script>
-
 
 
 <style lang="stylus" scoped>

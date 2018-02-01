@@ -258,13 +258,13 @@ mounted() {
 
 .node
   width 140px
-  height 3rem
+  height 2.75rem
   font-size 1rem
   padding 0.05rem
   text-align center
   border 2px solid $g3
   border-radius 0.5rem
-  margin 0.4rem 0.75rem 0.4rem 0
+  margin 0.4rem 0.75rem 0.25rem 0
   transition .51s all ease
   color black
   // text-shadow 0.5px 0.5px blue  

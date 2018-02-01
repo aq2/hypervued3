@@ -11,8 +11,8 @@
 
 <script>
 
-import {EventBus} from '../../../main'
-import ParetoCalcs from './../pareto/ParetoCalcs'
+import {EventBus} from '../../../../main'
+import ParetoCalcs from './../../pareto/ParetoCalcs'
 import ShowFronts from './ShowFronts'
 
 export default {

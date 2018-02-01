@@ -46,8 +46,6 @@ export default {
 
 <style lang="stylus">
 
-// @import 'styles/_vars'
-
 // global mixins
 
 link(radius=5px)
@@ -77,7 +75,6 @@ body
   background $g5
   font-size 1.15em
   font-family Ubuntu, Helvetica, Arial, sans-serif
-  
 
 #app 
   display flex        // sidebar 'fixed', #main grows
@@ -86,10 +83,6 @@ body
   
 #page
   padding 2.5rem 0 0 5rem
-
-#article
-  // background black
-
 
 h1
   margin 0
@@ -128,24 +121,20 @@ button
     cursor pointer
     background lightblue
 
-
 #text 
   background $g7
   padding 1rem
   width 600px
 
-
 .h 
   width 50px
   display inline-block
-
 
 .v 
   height 30px
 
 pre 
   font-size 1.5rem
-
 
 .cap
   color white
@@ -161,18 +150,10 @@ pre
 .init
   font-size 1rem
 
-.check
-  // position static
-
-.checkmark
-  // position relative
-  // margin-left 1rem
-
 .plainlabel
   position relative
   margin 0
   min-width 200px
-  // margin-left 1rem
 
 .lay
   margin-left 2rem
@@ -201,52 +182,6 @@ pre
   0% { border-color: green } 
   50% { border-color: blue } 
   100% { border-color: green }
-
-// shoudn't be here
-
-#slider-container
-  position: relative
-  height:30px
-  background-color: green
-
-
-.slider {
-    position: absolute
-    border: 1px solid #AAB
-    background: #BCE
-    height: 100%
-    width: 58px
-    top: 0px
-    cursor: move
-    /*margin:-0.5px*/
-}
-
-.slider .handle {
-    position: absolute
-    height: 9px
-    width: 9px
-    border: 2px solid blue
-    background: #f21
-    
-}
-
-.slider .EE {
-    right: -4px
-    cursor: e-resize
-    // background black
-}
-
-.slider .WW {
-    cursor: w-resize
-    left: -4px
-}
-
-.slider .EE, .slider .WW {
-    top: 50%
-    margin-top: -4px
-}
-
-
 
 fieldset
   border-radius 0.5rem
@@ -318,7 +253,6 @@ label .checkmark:after
 label input:checked ~ .checkmark
   background-color: #47c
 
-
 $bg = $g9
 $fg = $g0
 
@@ -346,14 +280,12 @@ $fg = $g0
 	opacity 0
 	transition opacity 0.5s
 
-
 /* Position the tooltip text */
 .tooltip-right
 	left 133%
 	
 .tooltip-left
 	right 133%
-
 
 /* Tooltip arrow */
 .tooltiptext::after
@@ -372,8 +304,6 @@ $fg = $g0
 	left 100%
 	margin-right -25px
 	border-color transparent transparent transparent $bg
-
-
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext
