@@ -1,168 +1,45 @@
-@import 'styles/_vars'
-@import 'styles/_mixins'
-@import 'styles/*'
+
+$buttonColour = blue
+// $buttonColour = green
+
+$trans = transparent
+
+$gd = #def
+$gc = #cde
+$gb = #bcd
+$ga = #abc
+$g9 = #9ab
+$g8 = #89a
+$g7 = #789
+$g6 = #678
+$g5 = #567
+$g45 = #5c6d7e
+$g4 = #456
+$g3 = #345
+$g2 = #234
+$g1 = #123
+$g0 = #012
+// 
 
 
+darkblue = #038
+blue = #259
+lightblue = #47c
+navy = #024
+purple = #529
+aqua = #08a
 
-#page
-  padding 2.5rem 0 0 5rem
+green = #474
+lime = #780
+olive = #663
 
-#article
-  // background black
+red = #710 
+maroon = #700
+orange = #a40
+yellow = #b80 
 
+black = #111
+gray = #777
+white = #ccc
+teal = #087
 
-h1
-  margin 0
-  margin-bottom 0.5rem
-  color #111
-  font-size 2rem
-  font-family Merriweather
-
-p
-  color #111
-  margin-bottom 1.5rem
-
-a
-  color $g9
-  outline none
-  link(0.5rem)
-  min-width 140px
-  background blue
-  font-size 1.2rem
-  text-align center
-  display inline-block
-  padding 0.2rem 0.2rem
-  text-decoration-line none
-
-button
-  font-size 1.25rem
-  color $g8
-  background blue
-  padding 0.75rem
-  border-radius 0.5rem
-  border 0
-  // border 2px solid lime
-  transition 0.5s all ease
-  // animation throb linear 2s infinite
-  &:hover
-    cursor pointer
-    background lightblue
-
-
-#text 
-  background $g7
-  padding 1rem
-  width 600px
-
-
-.h 
-  width 50px
-  display inline-block
-
-
-.v 
-  height 30px
-
-pre 
-  font-size 1.5rem
-
-
-
-.cap
-  color white
-  font-size 2rem
-  background $g5
-  min-width 400px
-  margin-bottom 1rem
-  padding 1rem
-
-.cap:nth-of-type(odd)
-  background $g6
-
-.init
-  font-size 1rem
-
-.check
-  // position static
-
-.checkmark
-  // position relative
-  // margin-left 1rem
-
-.plainlabel
-  position relative
-  margin 0
-  min-width 200px
-  // margin-left 1rem
-
-.lay
-  margin-left 2rem
-
-.plainlabel:hover input ~ .checkmark
-  background-color #47c
-  opacity 0.5
-  transition 0.25s all
-  cursor pointer
-
-//  ---  animations   ---
-//
-
-.flash
-  animation flash linear 2s infinite
-
-.throb
-  animation throb linear 2s infinite
-
-@keyframes flash
-  0% { opacity: 1 } 
-  50% { opacity: .5 } 
-  100% { opacity: 1 }
-
-@keyframes throb
-  0% { border-color: green } 
-  50% { border-color: blue } 
-  100% { border-color: green }
-
-// // shoudn't be here
-
-// #slider-container
-//   position: relative
-//   height:30px
-//   background-color: green
-
-
-// .slider {
-//     position: absolute
-//     border: 1px solid #AAB
-//     background: #BCE
-//     height: 100%
-//     width: 58px
-//     top: 0px
-//     cursor: move
-//     /*margin:-0.5px*/
-// }
-
-// .slider .handle {
-//     position: absolute
-//     height: 9px
-//     width: 9px
-//     border: 2px solid blue
-//     background: #f21
-    
-// }
-
-// .slider .EE {
-//     right: -4px
-//     cursor: e-resize
-//     // background black
-// }
-
-// .slider .WW {
-//     cursor: w-resize
-//     left: -4px
-// }
-
-// .slider .EE, .slider .WW {
-//     top: 50%
-//     margin-top: -4px
-// }
