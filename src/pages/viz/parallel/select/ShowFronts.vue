@@ -5,11 +5,14 @@
     button(v-for='(front, i) in fronts' @click='front(i)' @mouseover='showCands(i)') front {{i}}
       p ({{front.length}} candidates)
     .v
+  
   #search
     button search for candidate
+  
   #candidates(v-if='f != null')
     p Candidates in front {{f}}:
     span(v-for='cand in selectedFront') {{candiData[cand].candID}},&nbsp;
+
 
 </template>
 
