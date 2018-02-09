@@ -6,6 +6,7 @@
   //- VLink(href='/about') aboot
   SideBar
   Welcome
+  //- p griswold
     
 </template>
 
