@@ -58,13 +58,14 @@ export const EventBus = new Vue()
 const NotFound = { template: '<p>Page not found</p>' }
 import App from './pages/App'
 import About from './pages/About'
+import DataSource from './pages/datasources/datasource'
 
 // new Vue({
   const app = new Vue({
   el: '#app',
   store,
   components: {
-    App, About
+    App, About, DataSource
   },
   data: {
     currentRoute: window.location.pathname

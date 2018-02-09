@@ -22,7 +22,7 @@ components: {
 
 data() {
   return {
-    open: true,
+    open: false,
   }
 },
 
@@ -50,8 +50,7 @@ created() {
   EventBus.$on('sidebarOpen', () => {
     this.openUp()
     let sid = this.$('sidebar')
-    sid.style.paddingLeft = '0.5rem'
-    
+    sid.style.paddingLeft = '0.5rem'    
   })
 },
 
@@ -66,7 +65,7 @@ mounted() {
 <style lang='stylus' scoped>
 
 #sidebar
-  width 155px
+  width 0px
   background $g3
   padding-top 0.25rem
   padding-left 0.5rem

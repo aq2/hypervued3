@@ -1,18 +1,21 @@
 <template lang='pug'>
 
 #app
-  SideBarController   
+  //- SideBarController   
   //- PageController
-  VLink(href='/about')
+  //- VLink(href='/about') aboot
+  SideBar
+  Welcome
     
 </template>
 
 
 <script>
 
-import SideBarController from '../sidebar/SideBarController'
-import PageController from '../pages/PageController'
-import VLink from '../components/VLink'
+import SideBar from '../sidebar/Sidebar'
+import Welcome from './Welcome'
+// import PageController from '../pages/PageController'
+// import VLink from '../components/VLink'
 
 // Initialize Firebase
 let config = {
@@ -37,9 +40,10 @@ export default {
   },
   
   components: {
-    PageController,
-    SideBarController,
-    VLink
+    // PageController,
+    Welcome,
+    SideBar,
+    // VLink
   }
 }
 

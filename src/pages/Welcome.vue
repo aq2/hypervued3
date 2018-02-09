@@ -28,6 +28,7 @@
   .v
 
   button(class='throb' @click='nextPage') next page
+  VLink(href='/datasource' class='throb') next page
 
 
 </template>
@@ -37,7 +38,14 @@
 
 import {EventBus} from './../main'
 
+import VLink from './../VLink'
+
 export default {
+
+components: {
+  VLink
+},
+
 
 methods: {
   nextPage() {
