@@ -2,16 +2,17 @@
 
 #app
   SideBarController   
-  PageController
-
+  //- PageController
+  VLink(href='/about')
     
 </template>
 
 
 <script>
 
-import SideBarController from './sidebar/SideBarController'
-import PageController from './pages/PageController'
+import SideBarController from '../sidebar/SideBarController'
+import PageController from '../pages/PageController'
+import VLink from '../components/VLink'
 
 // Initialize Firebase
 let config = {
@@ -37,7 +38,8 @@ export default {
   
   components: {
     PageController,
-    SideBarController    
+    SideBarController,
+    VLink
   }
 }
 

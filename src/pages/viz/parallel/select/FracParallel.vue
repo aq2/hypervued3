@@ -16,14 +16,14 @@ export default {
 
 methods: {
 	main() {
-		var slider = this.createD3RangeSlider(0, 100)
+		var slider = this.createD3RangeSlider(0, 100) // todo need to set properly
 		
 		slider.onChange((newRange) => {
 			d3.select('#WW').text(newRange.begin)
 			d3.select('#EE').text(newRange.end)
 		})
 
-		slider.range(0,10)
+		slider.range(0,10) // todo need to set properly
 	},
 
   createD3RangeSlider(rangeMin, rangeMax) {

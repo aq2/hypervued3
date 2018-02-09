@@ -1,6 +1,9 @@
 // import vues
 import Vue from 'vue'
-import App from './App.vue'
+// import App from './App.vue'
+
+import routes from './routes'
+
 
 // vuex datastore
 import {store} from './store'
@@ -44,10 +47,39 @@ Vue.component('icon', Icon)
 
 export const EventBus = new Vue()
 
-// start the app
-new Vue({
+// // start the app
+// new Vue({
+//   el: '#app',
+//   store,
+//   // router,
+//   render: h => h(App)
+// })
+
+const NotFound = { template: '<p>Page not found</p>' }
+import App from './pages/App'
+import About from './pages/About'
+
+// new Vue({
+  const app = new Vue({
   el: '#app',
   store,
-  // router,
-  render: h => h(App)
+  components: {
+    App, About
+  },
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render (h) {
+    console.log(this.ViewComponent)
+    return h(this.ViewComponent)
+  }
+})
+
+window.addEventListener('popstate', () => {
+  app.currentRoute = window.location.pathname
 })
