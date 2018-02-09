@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import routes from './routes'
 import {store} from './store'
+export const EventBus = new Vue()
+
 
 // http stuff
 import VueResource from 'vue-resource'
@@ -9,6 +11,19 @@ Vue.use(VueResource)
 // firebase
 import VueFire from 'vuefire'
 Vue.use(VueFire)
+let config = {
+  apiKey: "AIzaSyBNYxHpiJt0U-h9Yb3E4MGXVCUBywtFpck",
+  authDomain: "dvzvue.firebaseapp.com",
+  databaseURL: "https://dvzvue.firebaseio.com",
+  projectId: "dvzvue",
+  storageBucket: "dvzvue.appspot.com",
+  messagingSenderId: "804794548950"
+}
+
+import Firebase from 'firebase'
+let appp = Firebase.initializeApp(config)
+let db = appp.database()
+let messagesRef = db.ref('massages')
 
 // awesome icons
   // cheaper to import them as you need them
@@ -40,19 +55,17 @@ Vue.use(VueFire)
   Vue.component('icon', Icon)
 //
 
-export const EventBus = new Vue()
 
 const NotFound = { template: '<p>Page not found</p>' }
 import App from './pages/App'
-import DataSource from './pages/datasources/datasource'
+import DataSource from './pages/datasources/DataSource'
 
-// new Vue({
-  const app = new Vue({
-  el: '#app',
-  store,
+const app = new Vue({
   components: {
     App, DataSource
   },
+
+  el: '#app',
   data: {
     currentRoute: window.location.pathname
   },
@@ -61,9 +74,14 @@ import DataSource from './pages/datasources/datasource'
       return routes[this.currentRoute] || NotFound
     }
   },
+  store,
   render (h) {
     return h(this.ViewComponent)
-  }
+  },
+  name: 'appp',
+  firebase: {
+    massages: messagesRef   // qq
+  },
 })
 
 window.addEventListener('popstate', () => {

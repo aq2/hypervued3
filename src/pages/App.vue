@@ -1,321 +1,106 @@
-<template lang='pug'>
+<template lang="pug">
 
-#app
-  //- SideBarController   
-  //- PageController
-  //- VLink(href='/about') aboot
-  SideBar
-  Welcome
-  //- p griswold
+#main
+  TheHeader
+  #page
+    h1 Welcome to HyperDViz
+    .v
     
+    icon(name='bar-chart' scale=8)
+    icon(name='area-chart' scale=8)
+    icon(name='line-chart' scale=8)
+    icon(name='pie-chart' scale=7)
+    .v
+
+    #text
+      p It's better to run this app in full-screen mode, either:
+      ul
+        li toggled with F11, or 
+        
+        li with the 
+          span(id='restore')
+            icon(name='window-restore' scale=1.25)
+          | button at top-right
+        
+        li or the nice big button below
+          .v2
+          button(@click='fullScreen') let's go fullscreen
+      
+      p press the 'next page' button below to continue
+    .v
+
+    VLink(href='/datasource' class='throb') next page
+
+
 </template>
 
 
 <script>
 
-import SideBar from '../sidebar/Sidebar'
-import Welcome from './Welcome'
-// import PageController from '../pages/PageController'
-// import VLink from '../components/VLink'
-
-// Initialize Firebase
-let config = {
-  apiKey: "AIzaSyBNYxHpiJt0U-h9Yb3E4MGXVCUBywtFpck",
-  authDomain: "dvzvue.firebaseapp.com",
-  databaseURL: "https://dvzvue.firebaseio.com",
-  projectId: "dvzvue",
-  storageBucket: "dvzvue.appspot.com",
-  messagingSenderId: "804794548950"
-}
-
-import Firebase from 'firebase'
-let app = Firebase.initializeApp(config)
-let db = app.database()
-let messagesRef = db.ref('massages')
+import {EventBus} from './../main'
+import VLink from './../components/VLink'
+import TheHeader from './../header/TheHeader'
 
 export default {
 
-  name: 'app',
-  firebase: {
-    massages: messagesRef   // qq
+components: {
+  VLink, TheHeader
+},
+
+
+methods: {
+  nextPage() {
+    EventBus.$emit('changePage', 1)
   },
-  
-  components: {
-    // PageController,
-    Welcome,
-    SideBar,
-    // VLink
+
+  fullScreen() {
+    EventBus.$emit('fullScreen')
   }
+}
+
 }
 
 </script>
 
 
-<style lang="stylus">
+// <style lang="stylus">
+// * 
+//   box-sizing border-box
+//   user-select none
+//   outline none
 
-// global mixins
-
-link(radius=5px)
-  border-radius radius
-  transition .25s all ease
-  border 2px solid transparent
-  &:hover
-    color $gb
-    cursor pointer
-    animation throb linear 1s infinite
-    background tint($buttonColour, 10)
-
-* 
-  box-sizing border-box
-  user-select none
-  outline none
-
-html
-  height 100%
-  background green
-
-body 
-  margin 0
-  padding 0
-  color #121
-  height 100%
-  background $g5
-  font-size 1.15em
-  font-family Ubuntu, Helvetica, Arial, sans-serif
-
-#app 
-  display flex        // sidebar 'fixed', #main grows
-  background $g4
-  height 100%
+// html
+//   height 100%
+//   // background green
+//   background $g5
   
-#page
-  padding 2.5rem 0 0 5rem
 
-h1
-  margin 0
+// body 
+//   margin 0
+//   padding 0
+//   color #121
+//   height 100%
+//   background $g5
+//   font-size 1.15em
+//   font-family Ubuntu, Helvetica, Arial, sans-serif
+
+// #app 
+//   display flex        // sidebar 'fixed', #main grows
+//   background $g4
+//   height 100%
+// </style>
+
+
+
+<style lang="stylus" scoped>
+
+#restore
+  margin 0 0.25rem 0 0.15rem
+
+li 
   margin-bottom 0.5rem
-  color #111
-  font-size 2rem
-  font-family Merriweather
 
-p
-  color #111
-  margin-bottom 1.5rem
-
-a
-  color $g9
-  outline none
-  link(0.5rem)
-  min-width 140px
-  background blue
-  font-size 1.2rem
-  text-align center
-  display inline-block
-  padding 0.2rem 0.2rem
-  text-decoration-line none
-
-button
-  font-size 1.25rem
-  color $g8
-  background blue
-  padding 0.75rem
-  border-radius 0.5rem
-  border 0
-  // border 2px solid lime
-  transition 0.5s all ease
-  // animation throb linear 2s infinite
-  &:hover
-    cursor pointer
-    background lightblue
-
-#text 
-  background $g7
-  padding 1rem
-  width 600px
-
-.h 
-  width 50px
-  display inline-block
-
-.v 
-  height 30px
-
-pre 
-  font-size 1.5rem
-
-.cap
-  color white
-  font-size 2rem
-  background $g5
-  min-width 400px
-  margin-bottom 1rem
-  padding 1rem
-
-.cap:nth-of-type(odd)
-  background $g6
-
-.init
-  font-size 1rem
-
-.plainlabel
-  position relative
-  margin 0
-  min-width 200px
-
-.lay
-  margin-left 2rem
-
-.plainlabel:hover input ~ .checkmark
-  background-color #47c
-  opacity 0.5
-  transition 0.25s all
-  cursor pointer
-
-//  ---  animations   ---
-//
-
-.flash
-  animation flash linear 2s infinite
-
-.throb
-  animation throb linear 2s infinite
-
-@keyframes flash
-  0% { opacity: 1 } 
-  50% { opacity: .5 } 
-  100% { opacity: 1 }
-
-@keyframes throb
-  0% { border-color: green } 
-  50% { border-color: blue } 
-  100% { border-color: green }
-
-fieldset
-  border-radius 0.5rem
-  border 2px solid $g9
-  margin-right 1.5rem
-
-legend
-  padding 0.2em 0.5em
-  border 1px solid $g9
-  background $g5
-  border-radius 5px
-  font-size 1.15rem
-  &.title 
-    font-size 1.5rem
-
-.list
-  background $blue
-  min-height 35px
-
-label 
-  display block
-  border 1px solid transparent
-  position relative
-  width 1.5rem
-  margin 0 auto
-  
-input
-  position absolute
-  opacity 0
-
-.checkmark
-  position absolute
-  top 0
-  left 0
-  height 1.25rem
-  width 1.25rem
-  background-color $g3
-  &.radio
-    border-radius 50%
-
-label:hover input ~ .checkmark
-  background-color #47c
-  opacity 0.5
-  transition 0.25s all
-
-label input:checked ~ .checkmark 
-  background-color #2196F3
-  transition 0.25s all
-
-.checkmark:after
-  content ""
-  position absolute
-  display none
-
-label input:checked ~ .checkmark:after
-  display block
-
-label .checkmark:after
-  left 7px
-  top 2px
-  width 5px
-  height 9px
-  border solid white
-  border-width 0 3px 3px 0
-  -webkit-transform rotate(45deg)
-  -ms-transform rotate(45deg)
-  transform rotate(45deg)
-
-label input:checked ~ .checkmark
-  background-color: #47c
-
-$bg = $g9
-$fg = $g0
-
-// tooltip container
-.tooltip
-  cursor pointer
-  position relative
-  display inline-block
-
-// tooltip text
-.tooltiptext
-	color $fg
-	width 300px
-	padding 5px 0
-	visibility hidden
-	text-align center
-	border-radius 6px
-	background-color $bg
-
-	/* Position the tooltip text */
-	z-index 1
-	position absolute
-
-	/* Fade in tooltip */
-	opacity 0
-	transition opacity 0.5s
-
-/* Position the tooltip text */
-.tooltip-right
-	left 133%
-	
-.tooltip-left
-	right 133%
-
-/* Tooltip arrow */
-.tooltiptext::after
-	top 35%
-	content " "
-	border-width 5px
-	position absolute
-	border-style solid
-
-.tooltip-right.tooltiptext::after 
-	right 100%
-	margin-left -5px
-	border-color transparent $bg transparent transparent
-
-.tooltip-left.tooltiptext::after 
-	left 100%
-	margin-right -25px
-	border-color transparent transparent transparent $bg
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext
-	opacity 0.8
-	visibility visible
-
+.v2
+  height .5rem
 
 </style>

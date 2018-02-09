@@ -29,7 +29,10 @@ module.exports = {
               {
                 loader: 'stylus-resources-loader',
                 options: {
-                  resources: path.resolve(__dirname, './src/main.styl')
+                  resources: [
+                    path.resolve(__dirname, './src/styles/vars.styl'),
+                    path.resolve(__dirname, './src/styles/main.styl')
+                  ]
                 }
               }
             ]
@@ -58,7 +61,6 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'styles': path.resolve(__dirname, './src/style/')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
